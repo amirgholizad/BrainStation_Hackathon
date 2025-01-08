@@ -8,16 +8,16 @@ class weather {
   }
 
   async getLocation() {
-    const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${this.city}&limit=1&appid=${this.key}`);
-    const data = await response.json();
+    const response = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${this.city}&limit=1&appid=${this.key}`);
+    const data = response.data;
     const { lat, lon } = data[0];
     return { lat, lon };
   }
   
   async getWeather() {
     const { lat, lon } = await this.getLocation();
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${this.key}`);
-    const data = await response.json();
+    const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${this.key}`);
+    const data = response.data;
     return data;
   }
 

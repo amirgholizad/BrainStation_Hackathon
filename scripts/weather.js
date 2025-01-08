@@ -28,9 +28,38 @@ class weather {
     const high = Math.round(data.main.temp_max - 273.15);
     const low = Math.round(data.main.temp_min - 273.15);
     const description = data.weather[0].description;
-  }
+
+    const weatherContainer = document.querySelector(".weather-container");
+    weatherContainer.innerHTML = '';
+
+    const cityDescription = document.createElement("h4");
+    cityDescription.textContent = `We predict ${description} for ${this.city} today!`;
+    weatherContainer.appendChild(cityDescription);
+
+    const tempValue = document.createElement("h2");
+    tempValue.textContent = `${temp}°C`;
+    weatherContainer.appendChild(tempValue);
+
+    const feelValue = document.createElement("p");
+    feelValue.textContent = `Feels like: ${feel}°C`;
+    weatherContainer.appendChild(feelValue);
 
 
+
+    const highLow = document.createElement("div");
+    highLow.classList.add("high-low");
+
+    const highValue = document.createElement("p");
+    highValue.textContent = `High: ${high}°C`;
+
+    const lowValue = document.createElement("p");
+    lowValue.textContent = `Low: ${low}°C`;
+
+    highLow.appendChild(highValue);
+    highLow.appendChild(lowValue);
+
+    weatherContainer.appendChild(highLow);
+}
 }
 
 

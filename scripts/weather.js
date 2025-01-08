@@ -2,7 +2,7 @@ import key from "../keys.json" with { type: "json" };
 
 class weather {
   constructor(city) {
-    this.key = key.WEATHER_API_KEY;
+    this.key = key[0].WEATHER_API_KEY;
     this.city = city;
     this.temp = 0;
     this.feel = 0;

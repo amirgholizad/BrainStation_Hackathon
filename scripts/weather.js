@@ -4,11 +4,6 @@ class weather {
   constructor(city) {
     this.key = key[0].WEATHER_API_KEY;
     this.city = city;
-    this.temp = 0;
-    this.feel = 0;
-    this.high = 0;
-    this.low = 0;
-    this.description = "";
   }
 
   async getLocation() {

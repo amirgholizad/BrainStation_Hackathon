@@ -10,26 +10,33 @@ body {
   flex-direction: column;
   height: 100vh;
   justify-content: space-between;
-  max-width: 900px;
-  margin: auto;
+  // max-width: ;
+  // margin: auto;
 }
+
 .body__background__default {
   background-image: url("../assets/images/background.jpg");
+  background-size: cover;
 }
 .body__background__-10 {
   background-image: url("../assets/images/-10.jpg");
+  background-size: cover;
 }
 .body__background__0-10 {
   background-image: url("../assets/images/0-10.jpg");
+  background-size: cover;
 }
 .body__background__10-20 {
   background-image: url("../assets/images/10-20.jpg");
+  background-size: cover;
 }
 .body__background__20-30 {
   background-image: url("../assets/images/20-30.jpg");
+  background-size: cover;
 }
 .body__background__30 {
   background-image: url("../assets/images/30.jpg");
+  background-size: cover;
 }
 
 footer {

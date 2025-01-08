@@ -18,34 +18,36 @@
       </section>
     </header>
     <main class="main">
-      <section class="about">
-        <h1 class="about__title">Style Smart, Dress Right</h1>
-        <p class="about__text">
-          Discover outfit recommendations tailored to the current weather in
-          your area. Stay stylish, comfortable, and prepared for any conditions,
-          whether it's sunny, rainy, or anything in between. Dress with
-          confidence, every day. <br /><span
-            >Keep an eye out for a little something extra to brighten your
-            day😉</span
-          >
-        </p>
+      <section class="initial">
+        <section class="about">
+          <h1 class="about__title">Style Smart, Dress Right</h1>
+          <p class="about__text">
+            Discover outfit recommendations tailored to the current weather in
+            your area. Stay stylish, comfortable, and prepared for any
+            conditions, whether it's sunny, rainy, or anything in between. Dress
+            with confidence, every day. <br /><span
+              >Keep an eye out for a little something extra to brighten your
+              day😉</span
+            >
+          </p>
+        </section>
+        <section>
+          <form class="form">
+            <h3 class="form__title">Enter Your Location, Get Your Outfit</h3>
+            <label class="form__lable" for="location">Where do you live:</label>
+            <input
+              class="form__input"
+              type="text"
+              id="city"
+              name="city"
+              required
+              placeholder="city"
+            />
+            <button class="form__button" type="submit">See Weather</button>
+          </form>
+        </section>
       </section>
-      <section>
-        <form class="form">
-          <h3 class="form__title">Enter Your Location, Get Your Outfit</h3>
-          <label class="form__lable" for="location">Where do you live:</label>
-          <input
-            class="form__input"
-            type="text"
-            id="city"
-            name="city"
-            required
-            placeholder="city"
-          />
-          <button class="form__button" type="submit">See Weather</button>
-        </form>
-      </section>
-      <section class="weather-container">
+      <section class="weather">
         <!-- Autopopulate here with weather data -->
       </section>
     </main>

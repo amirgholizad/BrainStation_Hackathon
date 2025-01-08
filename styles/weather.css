@@ -1,0 +1,72 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  font-family: "Nunito Sans", Arial, sans-serif;
+}
+
+.header,
+.footer {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+main {
+  color: rgb(127, 127, 127);
+}
+
+.header__title,
+.footer__creators__headline {
+  text-align: center;
+  font-weight: 100;
+  padding: 2rem;
+}
+
+.about__title {
+  padding: 1rem;
+  text-align: center;
+  font-weight: 100;
+}
+.about__text {
+  padding: 1rem;
+  text-align: center;
+  font-weight: 100;
+}
+
+.form__title {
+  padding: 1rem;
+  text-align: center;
+  font-weight: 100;
+}
+.form__lable {
+  padding: 1rem;
+  text-align: center;
+  display: block;
+}
+.form__input {
+  margin: 1rem auto;
+  text-align: center;
+  display: block;
+}
+.form__button {
+  margin: 1rem auto;
+  text-align: center;
+  display: block;
+}
+.form__button-text {
+  text-decoration: none;
+  color: #7f7f7f;
+}
+
+body {
+  background-image: url("../assets/images/background.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}/*# sourceMappingURL=weather.css.map */

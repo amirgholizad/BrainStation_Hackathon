@@ -4,17 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Moody Wear</title>
+    <link rel="stylesheet" href="./styles/weather.css" />
   </head>
   <body>
     <header class="header">
       <section class="header__container">
-        <h2>Moody Wear</h2>
+        <h2 class="header__title">Moody Wear</h2>
       </section>
     </header>
     <main class="main">
       <section class="about">
-        <h1>Style Smart, Dress Right</h1>
-        <p>
+        <h1 class="about__title">Style Smart, Dress Right</h1>
+        <p class="about__text">
           Discover outfit recommendations tailored to the current weather in
           your area. Stay stylish, comfortable, and prepared for any conditions,
           whether it's sunny, rainy, or anything in between. Dress with
@@ -25,25 +26,25 @@
         </p>
       </section>
       <section>
-        <h3>Enter Your Location, Get Your Outfit</h3>
         <form class="form">
-          <label for="location">Where do you live:</label>
-          <input
+          <h3 class="form__title">Enter Your Location, Get Your Outfit</h3>
+          <label class="form__lable" for="location">Where do you live:</label>
+          <input class="form__input"
             type="text"
             id="location"
             name="location"
             required
             placeholder="city"
           />
-          <input
+          <input class="form__input"
             type="text"
             id="zip"
             name="zip"
             required
             placeholder="zip code"
           />
-          <button type="submit">
-            <a href="./pages/weather.html">See Weather</a>
+          <button class="form__button" type="submit">
+            <a class="form__button-text" href="./pages/weather.html">See Weather</a>
           </button>
         </form>
       </section>

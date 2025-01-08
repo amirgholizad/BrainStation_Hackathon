@@ -1,0 +1,56 @@
+@use "./partials/global" as *;
+@use "./partials/variables" as *;
+
+.header__title,
+.footer__creators__headline {
+  text-align: center;
+  font-weight: 100;
+  padding: 2rem;
+}
+
+.about {
+  &__title {
+    padding: 1rem;
+    text-align: center;
+    font-weight: 100;
+  }
+  &__text {
+    padding: 1rem;
+    text-align: center;
+    font-weight: 100;
+  }
+}
+
+.form {
+  &__title {
+    padding: 1rem;
+    text-align: center;
+    font-weight: 100;
+  }
+  &__lable {
+    padding: 1rem;
+    text-align: center;
+    display: block;
+  }
+  &__input {
+    margin: 1rem auto;
+    text-align: center;
+    display: block;
+  }
+  &__button {
+    margin: 1rem auto;
+    text-align: center;
+    display: block;
+  }
+  &__button-text {
+    text-decoration: none;
+    color: $primary-color;
+  }
+}
+
+body {
+  background-image: url("../assets/images/background.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

@@ -4,7 +4,6 @@ const backgroundImg = document.querySelector("body");
 const snow = document.querySelectorAll(".inner");
 console.log(snow);
 console.log(backgroundImg);
-const this.temp = -55; //get this temp from api response
 const button = document.querySelector(".form__button");
 button.addEventListener("click", function (event) {
   //function to snow and to change background image, please wrap this in the submit eventlistener instead

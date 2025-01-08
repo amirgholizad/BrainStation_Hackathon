@@ -156,6 +156,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  height: auto;
 }
 .footer__title {
   text-align: center;
@@ -166,18 +167,19 @@ footer {
 }
 .footer__creators {
   margin: auto;
-  width: 20rem;
+  width: 50vw;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 1rem;
 }
 .footer__creators__img {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 10vh;
+  height: 10vh;
   border-radius: 50%;
-  opacity: 50%;
+  opacity: 100%;
 }
 .footer__creators__img:hover {
-  opacity: 100%;
+  opacity: 70%;
 }
 .footer__copyright {
   text-align: center;
@@ -395,4 +397,9 @@ footer {
 .snowflake:nth-of-type(11) {
   left: 65%;
   animation-delay: 2.5s;
+}
+
+.weather__clothing {
+  background-color: white;
+  color: black;
 }/*# sourceMappingURL=weather.css.map */

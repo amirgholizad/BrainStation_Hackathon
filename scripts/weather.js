@@ -81,32 +81,59 @@ class weather {
   snow.forEach((item) => {
     item.innerHTML = "🔪";
   });
+  const winterClothing = document.createElement("p");
+  winterClothing.textContent = "You should wear a coat and gloves!";
+  weatherContainer.appendChild(winterClothing);
+  winterClothing.classList.add("weather__clothing");
+
 } else if (this.temp > 0 && this.temp <= 10) {
   backgroundImg.classList.remove("body__background__default");
   backgroundImg.classList.add("body__background__0-10");
   snow.forEach((item) => {
     item.innerHTML = "❄️";
   });
+
+  const springClothing = document.createElement("p");
+  springClothing.textContent = "You should wear a light jacket!";
+  weatherContainer.appendChild(springClothing);
+  springClothing.classList.add("weather__clothing");
+
 } else if (this.temp > 10 && this.temp <= 20) {
   backgroundImg.classList.remove("body__background__default");
   backgroundImg.classList.add("body__background__10-20");
   snow.forEach((item) => {
     item.innerHTML = "🌸";
   });
+
+  const summerClothing = document.createElement("p");
+  summerClothing.textContent = "You should wear a t-shirt!";
+  weatherContainer.appendChild(summerClothing);
+  summerClothing.classList.add("weather__clothing");
+
 } else if (this.temp > 20 && this.temp <= 30) {
   backgroundImg.classList.remove("body__background__default");
   backgroundImg.classList.add("body__background__20-30");
   snow.forEach((item) => {
     item.innerHTML = "☀️";
   });
+
+  const autumnClothing = document.createElement("p");
+  autumnClothing.textContent = "You should wear shorts!";
+  weatherContainer.appendChild(autumnClothing);
+  autumnClothing.classList.add("weather__clothing");
+
 } else if (this.temp > 30) {
   backgroundImg.classList.remove("body__background__default");
   backgroundImg.classList.add("body__background__30");
   snow.forEach((item) => {
     item.innerHTML = "🔥";
   });
-}
 
+  const hotClothing = document.createElement("p");
+  hotClothing.textContent = "You should wear a tank top!";
+  weatherContainer.appendChild(hotClothing);
+  hotClothing.classList.add("weather__clothing");
+}
 }
 }
 

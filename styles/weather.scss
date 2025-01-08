@@ -2,16 +2,34 @@
 @use "./partials/variables" as *;
 
 body {
-  background-image: url("../assets/images/background.jpg");
   background-position: center;
-  background-size: auto 100%;
+  background-size: cover;
+  background-size: 900px auto;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   height: 100vh;
   justify-content: space-between;
-  max-width: 905px;
+  max-width: 900px;
   margin: auto;
+}
+.body__background__default {
+  background-image: url("../assets/images/background.jpg");
+}
+.body__background__-10 {
+  background-image: url("../assets/images/-10.jpg");
+}
+.body__background__0-10 {
+  background-image: url("../assets/images/0-10.jpg");
+}
+.body__background__10-20 {
+  background-image: url("../assets/images/10-20.jpg");
+}
+.body__background__20-30 {
+  background-image: url("../assets/images/20-30.jpg");
+}
+.body__background__30 {
+  background-image: url("../assets/images/30.jpg");
 }
 
 footer {
@@ -105,6 +123,7 @@ footer {
     margin-top: 1rem;
     margin-bottom: 0.5rem;
     font-weight: 300;
+    font-size: 1rem;
   }
   &__creators {
     margin: auto;
@@ -124,7 +143,7 @@ footer {
   &__copyright {
     text-align: center;
     font-weight: 200;
-    font-size: small;
+    font-size: 0.7rem;
     padding-bottom: 0.5rem;
   }
 }

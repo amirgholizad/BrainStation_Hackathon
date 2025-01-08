@@ -8,7 +8,7 @@
 
 html,
 body {
-  font-family: "Nunito Sans", Arial, sans-serif;
+  font-family: "Open Sans";
 }
 
 .header,
@@ -18,34 +18,62 @@ body {
 }
 
 main {
-  color: rgb(127, 127, 127);
+  color: #778899;
 }
 
-.header__title,
-.footer__creators__headline {
+a {
+  text-decoration: none;
+}
+
+body {
+  background-image: url("../assets/images/background.jpg");
+  background-position: center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+  max-width: 905px;
+  margin: auto;
+}
+
+footer {
+  height: 16.5%;
+}
+
+.main {
+  padding: 1rem;
+}
+
+.header__title {
   text-align: center;
   font-weight: 100;
-  padding: 2rem;
+  padding: 1.25rem;
 }
 
 .about__title {
-  padding: 1rem;
+  padding: 1.5rem;
   text-align: center;
-  font-weight: 100;
+  font-weight: 400;
 }
 .about__text {
   padding: 1rem;
   text-align: center;
-  font-weight: 100;
+  font-weight: 50;
+  font-style: italic;
+  opacity: 90%;
+  width: 80%;
+  margin: auto;
 }
 
 .form__title {
   padding: 1rem;
   text-align: center;
-  font-weight: 100;
+  font-weight: 400;
 }
 .form__lable {
-  padding: 1rem;
+  padding: 0.5rem;
   text-align: center;
   display: block;
 }
@@ -53,20 +81,219 @@ main {
   margin: 1rem auto;
   text-align: center;
   display: block;
+  height: 2rem;
+  color: #778899;
+  border: black 1px dashed;
+  border-radius: 5px;
+  background-color: #f0f8ff;
+}
+.form__input::-moz-placeholder {
+  color: #a9a9a9;
+  font-weight: 50;
+}
+.form__input::placeholder {
+  color: #a9a9a9;
+  font-weight: 50;
+}
+.form__input:hover {
+  border: black 1px solid;
+}
+.form__input:focus {
+  outline: none;
+  border: black 1px solid;
 }
 .form__button {
   margin: 1rem auto;
   text-align: center;
   display: block;
-}
-.form__button-text {
+  height: 2rem;
+  border: black 1px solid;
+  border-radius: 5px;
+  width: 9rem;
+  background-color: #f0f8ff;
   text-decoration: none;
-  color: #7f7f7f;
+  color: #778899;
+}
+.form__button:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: white 1px solid;
 }
 
-body {
-  background-image: url("../assets/images/background.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.footer__title {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 300;
+}
+.footer__creators {
+  margin: auto;
+  width: 20rem;
+  display: flex;
+  justify-content: space-around;
+}
+.footer__creators__img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  opacity: 50%;
+}
+.footer__creators__img:hover {
+  opacity: 100%;
+}
+.footer__copyright {
+  text-align: center;
+  font-weight: 200;
+  font-size: small;
+  padding-bottom: 0.5rem;
+}
+
+.snowflake {
+  color: #fff;
+  font-size: 1em;
+  font-family: Arial, sans-serif;
+  text-shadow: 0 0 5px #000;
+}
+
+.snowflake,
+.snowflake .inner {
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+@keyframes snowflakes-fall {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(110vh);
+  }
+}
+@keyframes snowflakes-shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(80px);
+  }
+}
+.snowflake {
+  position: fixed;
+  top: -10%;
+  z-index: 9999;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+  cursor: default;
+  pointer-events: none;
+  animation-name: snowflakes-shake;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+}
+
+.snowflake .inner {
+  animation-duration: 10s;
+  animation-name: snowflakes-fall;
+  animation-timing-function: linear;
+}
+
+.snowflake:nth-of-type(0) {
+  left: 1%;
+  animation-delay: 0s;
+}
+
+.snowflake:nth-of-type(0) .inner {
+  animation-delay: 0s;
+}
+
+.snowflake:first-of-type {
+  left: 10%;
+  animation-delay: 1s;
+}
+
+.snowflake:first-of-type .inner,
+.snowflake:nth-of-type(8) .inner {
+  animation-delay: 1s;
+}
+
+.snowflake:nth-of-type(2) {
+  left: 20%;
+  animation-delay: 0.5s;
+}
+
+.snowflake:nth-of-type(2) .inner,
+.snowflake:nth-of-type(6) .inner {
+  animation-delay: 6s;
+}
+
+.snowflake:nth-of-type(3) {
+  left: 30%;
+  animation-delay: 2s;
+}
+
+.snowflake:nth-of-type(11) .inner,
+.snowflake:nth-of-type(3) .inner {
+  animation-delay: 4s;
+}
+
+.snowflake:nth-of-type(4) {
+  left: 40%;
+  animation-delay: 2s;
+}
+
+.snowflake:nth-of-type(10) .inner,
+.snowflake:nth-of-type(4) .inner {
+  animation-delay: 2s;
+}
+
+.snowflake:nth-of-type(5) {
+  left: 50%;
+  animation-delay: 3s;
+}
+
+.snowflake:nth-of-type(5) .inner {
+  animation-delay: 8s;
+}
+
+.snowflake:nth-of-type(6) {
+  left: 60%;
+  animation-delay: 2s;
+}
+
+.snowflake:nth-of-type(7) {
+  left: 70%;
+  animation-delay: 1s;
+}
+
+.snowflake:nth-of-type(7) .inner {
+  animation-delay: 2.5s;
+}
+
+.snowflake:nth-of-type(8) {
+  left: 80%;
+  animation-delay: 0s;
+}
+
+.snowflake:nth-of-type(9) {
+  left: 90%;
+  animation-delay: 1.5s;
+}
+
+.snowflake:nth-of-type(9) .inner {
+  animation-delay: 3s;
+}
+
+.snowflake:nth-of-type(10) {
+  left: 25%;
+  animation-delay: 0s;
+}
+
+.snowflake:nth-of-type(11) {
+  left: 65%;
+  animation-delay: 2.5s;
 }/*# sourceMappingURL=weather.css.map */

@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Moody Wear</title>
     <link rel="stylesheet" href="./styles/weather.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
+  <body class="body">
     <header class="header">
       <section class="header__container">
-        <h2 class="header__title">Moody Wear</h2>
+        <h2 class="header__title">MOODY WEAR</h2>
       </section>
     </header>
     <main class="main">
@@ -29,38 +33,92 @@
         <form class="form">
           <h3 class="form__title">Enter Your Location, Get Your Outfit</h3>
           <label class="form__lable" for="location">Where do you live:</label>
-          <input class="form__input"
+          <input
+            class="form__input"
             type="text"
             id="location"
             name="location"
             required
             placeholder="city"
           />
-          <input class="form__input"
-            type="text"
-            id="zip"
-            name="zip"
-            required
-            placeholder="zip code"
-          />
-          <button class="form__button" type="submit">
-            <a class="form__button-text" href="./pages/weather.html">See Weather</a>
-          </button>
+          <a href="./pages/weather.html"
+            ><button class="form__button" type="submit">See Weather</button></a
+          >
         </form>
       </section>
     </main>
     <footer class="footer">
+      <h3 class="footer__title">Get in Touch with the Creators</h3>
       <section class="footer__creators">
-        <h3 class="footer__creators__headline">
-          Get in Touch with the Creators
-        </h3>
-        <div class="footer__creators__image__Amir"></div>
-        <div class="footer__creators__image__Chaofan"></div>
-        <div class="footer__creators__image__Sahar"></div>
+        <div class="footer__creators">
+          <a href="https://www.linkedin.com/in/amirgholizad/">
+            <img
+              class="footer__creators__img"
+              src="./assets/images/Amir.png"
+              alt="Sahar photo"
+            />
+          </a>
+        </div>
+        <div class="footer__creators">
+          <a href="https://www.linkedin.com/in/chaofan-ma/">
+            <img
+              class="footer__creators__img"
+              src="./assets/images/Chaofan.png"
+              alt="Sahar photo"
+            />
+          </a>
+        </div>
+        <div class="footer__creators">
+          <a href="https://www.linkedin.com/in/sahar-jafrani/">
+            <img
+              class="footer__creators__img"
+              src="./assets/images/Sahar.png"
+              alt="Sahar photo"
+            />
+          </a>
+        </div>
       </section>
       <section class="footer__copyright">
         <p>&copy; 2025 Moody Wear</p>
       </section>
+      <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">
+          <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+          <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+          <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+          <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+          <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+          <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+          <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+          <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+          <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+          <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+          <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+          <div class="inner">❅</div>
+        </div>
+      </div>
     </footer>
   </body>
 </html>

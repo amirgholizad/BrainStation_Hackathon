@@ -10,15 +10,19 @@
 
 html,
 body {
-  font-family: "Nunito Sans", Arial, sans-serif;
+  font-family: "Open Sans";
 }
 
 .header,
 .footer {
-    color: white;
-  background-color: rgba(0, 0, 0, 0.5);
+  color: $secondary-text;
+  background-color: rgba($primary-background, $alpha: 0.5);
 }
 
-main{
-    color: rgb(127, 127, 127);
+main {
+  color: $primary-text;
+}
+
+a {
+  text-decoration: none;
 }

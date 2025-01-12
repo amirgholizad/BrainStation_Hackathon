@@ -4,3 +4,4 @@
 *.map
 keys.json
 node_modules
+.env

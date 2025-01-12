@@ -65,35 +65,36 @@ class weather {
   }
 
   async genAiImage() {
-      const API_URL = "https://api.openai.com/v1/images/generations";
-      const aiKey = key[1].OPENAI_API_KEY;
-  
-      try {
-          const response = await axios.post(API_URL,
-              {
-                model: 'dall-e-3',
-                prompt: 'A cute baby sea otter',
-                n: 1,
-                size: '1024x1024',
-              },
-              {
-                headers: {
-                  'Content-Type': 'application/json',
-                  Authorization: `Bearer ${aiKey}`,
-                },
-              }
-            )
-          console.log(response.data.data[0].url);
-        } catch (error) {
-              const errorMessage = await error;
-              console.error('Error Details:', errorMessage);
-            };
-          }
+    const API_URL = "https://api.openai.com/v1/images/generations";
+    const aiKey = key[1].OPENAI_API_KEY;
+
+    try {
+      const response = await axios.post(
+        API_URL,
+        {
+          model: "dall-e-3",
+          prompt: "A cute baby sea otter",
+          n: 1,
+          size: "1024x1024",
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${aiKey}`,
+          },
+        }
+      );
+      console.log(response.data.data[0].url);
+    } catch (error) {
+      const errorMessage = await error;
+      console.error("Error Details:", errorMessage);
+    }
+  }
 
   async displayWeather() {
     await this.getWeather();
     await this.genAi();
-    const baseText = `Based on the weather, we recommend you to wear ${this.responseJSON.Top} for the top, ${this.responseJSON.Bottom} for the bottom, and ${this.responseJSON.Footwear} for the footwear.`;
+    const baseText = `Based on the weather, we recommend you to wear ${this.responseJSON.Top.toLowerCase()} for the top, ${this.responseJSON.Bottom.toLowerCase()} for the bottom, and ${this.responseJSON.Footwear.toLowerCase()} for the footwear.`;
 
     const weatherContainer = document.querySelector(".weather");
     weatherContainer.innerHTML = "";
@@ -199,13 +200,11 @@ class weather {
   }
 }
 
-
 const formValue = document.querySelector(".form");
 
 const formListener = formValue.addEventListener("submit", (e) => {
   e.preventDefault();
   const cityValue = e.target.city.value.trim();
-
 
   const weatherContainer = new weather(cityValue);
   weatherContainer.displayWeather();

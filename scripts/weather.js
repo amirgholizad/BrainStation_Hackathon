@@ -73,7 +73,7 @@ class weather {
         API_URL,
         {
           model: "dall-e-3",
-          prompt: "A cute baby sea otter",
+          prompt: `A beautiful lady wearing ${this.responseJSON.Top} for the top, ${this.responseJSON.Bottom} for the bottom, and ${this.responseJSON.Footwear} for the footwear. Remove the background. The lady should be smiling and looking at the camera. Use claymation style. The picture must be in full length.`,
           n: 1,
           size: "1024x1024",
         },
@@ -85,6 +85,7 @@ class weather {
         }
       );
       console.log(response.data.data[0].url);
+      this.responseJSON.url = response.data.data[0].url;
     } catch (error) {
       const errorMessage = await error;
       console.error("Error Details:", errorMessage);
@@ -92,27 +93,55 @@ class weather {
   }
 
   async displayWeather() {
-    await this.getWeather();
-    await this.genAi();
-    const baseText = `Based on the weather, we recommend you to wear ${this.responseJSON.Top.toLowerCase()} for the top, ${this.responseJSON.Bottom.toLowerCase()} for the bottom, and ${this.responseJSON.Footwear.toLowerCase()} for the footwear.`;
 
     const weatherContainer = document.querySelector(".weather");
+    const weatherForm = document.querySelector(".form");
     weatherContainer.innerHTML = "";
+    weatherForm.classList.add("hide");
+    
+    const loadingMessage = document.createElement("p");
+    loadingMessage.textContent = "Fetching weather and AI recommendations...";
+    loadingMessage.classList.add("loading-message");
+    weatherContainer.appendChild(loadingMessage);
+
+  try {
+      await this.getWeather();
+      loadingMessage.textContent = "Generating AI outfit recommendations...";
+
+      await this.genAi();
+      loadingMessage.textContent = "Creating AI-generated image...";
+
+      await this.genAiImage();
+
+      weatherContainer.removeChild(loadingMessage);
+
+    const baseText = `MOODY WEAR AI Recommendation: Based on the weather, we recommend you to wear ${this.responseJSON.Top.toLowerCase()} for the top, ${this.responseJSON.Bottom.toLowerCase()} for the bottom, and ${this.responseJSON.Footwear.toLowerCase()} for the footwear.`;
+
+    const weatherBox = document.createElement("div");
+    weatherBox.classList.add("weather__box");
+    weatherContainer.appendChild(weatherBox);
+
+    const weatherImage = document.createElement("img");
+    weatherImage.classList.add("weather__image");
+   
+    weatherImage.src = this.responseJSON.url;
+    weatherImage.alt = "AI generated image";
+    weatherContainer.appendChild(weatherImage);
 
     const cityDescription = document.createElement("h3");
     cityDescription.textContent = `We predict ${this.description} for ${this.city} today!`;
     cityDescription.classList.add("weather__city");
-    weatherContainer.appendChild(cityDescription);
+    weatherBox.appendChild(cityDescription);
 
     const tempValue = document.createElement("h1");
     tempValue.classList.add("weather__temp");
     tempValue.textContent = `${this.temp}°C`;
-    weatherContainer.appendChild(tempValue);
+    weatherBox.appendChild(tempValue);
 
     const feelValue = document.createElement("p");
     feelValue.classList.add("weather__feel");
     feelValue.textContent = `Feels like: ${this.feel}°C`;
-    weatherContainer.appendChild(feelValue);
+    weatherBox.appendChild(feelValue);
 
     const highLow = document.createElement("div");
     highLow.classList.add("weather__high-low");
@@ -133,8 +162,8 @@ class weather {
     highLow.appendChild(highValue);
     highLow.appendChild(lowValue);
 
-    weatherContainer.appendChild(highLow);
-    weatherContainer.appendChild(returnLink);
+    weatherBox.appendChild(highLow);
+    weatherBox.appendChild(returnLink);
     returnLink.appendChild(returnButton);
 
     const initial = document.querySelector(".initial");
@@ -150,7 +179,7 @@ class weather {
       });
       const winterClothing = document.createElement("p");
       winterClothing.textContent = baseText;
-      weatherContainer.appendChild(winterClothing);
+      weatherBox.appendChild(winterClothing);
       winterClothing.classList.add("weather__clothing");
     } else if (this.temp > 0 && this.temp <= 10) {
       backgroundImg.classList.remove("body__background__default");
@@ -161,7 +190,7 @@ class weather {
 
       const springClothing = document.createElement("p");
       springClothing.textContent = baseText;
-      weatherContainer.appendChild(springClothing);
+      weatherBox.appendChild(springClothing);
       springClothing.classList.add("weather__clothing");
     } else if (this.temp > 10 && this.temp <= 20) {
       backgroundImg.classList.remove("body__background__default");
@@ -172,7 +201,7 @@ class weather {
 
       const summerClothing = document.createElement("p");
       summerClothing.textContent = baseText;
-      weatherContainer.appendChild(summerClothing);
+      weatherBox.appendChild(summerClothing);
       summerClothing.classList.add("weather__clothing");
     } else if (this.temp > 20 && this.temp <= 30) {
       backgroundImg.classList.remove("body__background__default");
@@ -183,7 +212,7 @@ class weather {
 
       const autumnClothing = document.createElement("p");
       autumnClothing.textContent = baseText;
-      weatherContainer.appendChild(autumnClothing);
+      weatherBox.appendChild(autumnClothing);
       autumnClothing.classList.add("weather__clothing");
     } else if (this.temp > 30) {
       backgroundImg.classList.remove("body__background__default");
@@ -194,11 +223,16 @@ class weather {
 
       const hotClothing = document.createElement("p");
       hotClothing.textContent = baseText;
-      weatherContainer.appendChild(hotClothing);
+      weatherBox.appendChild(hotClothing);
       hotClothing.classList.add("weather__clothing");
     }
+  } catch (error) {
+    console.error("Error fetching weather data:", error);
+    loadingMessage.textContent = "Error fetching weather data. Please try again.";
   }
 }
+}
+
 
 const formValue = document.querySelector(".form");
 
@@ -206,8 +240,8 @@ const formListener = formValue.addEventListener("submit", (e) => {
   e.preventDefault();
   const cityValue = e.target.city.value.trim();
 
-  const weatherContainer = new weather(cityValue);
-  weatherContainer.displayWeather();
+  const weatherBox = new weather(cityValue);
+  weatherBox.displayWeather();
 
   formValue.reset();
 });

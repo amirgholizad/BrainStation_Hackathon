@@ -32,7 +32,6 @@ a {
 body {
   background-position: center;
   background-size: cover;
-  background-size: 900px auto;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
@@ -157,6 +156,7 @@ footer {
   flex-direction: column;
   justify-content: space-around;
   height: auto;
+  overflow: hidden;
 }
 .footer__title {
   text-align: center;
@@ -188,13 +188,35 @@ footer {
   padding-bottom: 0.5rem;
 }
 
+.loading-message {
+  font-size: 1.2rem;
+  color: #555;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
 .weather {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+}
+.weather__box {
   color: white;
   text-align: center;
   display: flex;
   flex-direction: column;
   width: 30rem;
   margin: auto;
+}
+.weather__image {
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+  margin: auto;
+  border: black 1px dashed;
 }
 .weather__city {
   color: white;

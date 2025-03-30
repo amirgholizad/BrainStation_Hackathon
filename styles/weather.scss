@@ -4,7 +4,6 @@
 body {
   background-position: center;
   background-size: cover;
-  background-size: 900px auto;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
@@ -129,6 +128,7 @@ footer {
   flex-direction: column;
   justify-content: space-around;
   height: auto;
+  overflow: hidden;
   &__title {
     text-align: center;
     margin-top: 1rem;
@@ -160,13 +160,35 @@ footer {
   }
 }
 
-.weather {
-  color: $secondary-text;
+.loading-message {
+  font-size: 1.2rem;
+  color: #555;
+  font-weight: bold;
   text-align: center;
+  margin-top: 20px;
+}
+
+.weather {
   display: flex;
-  flex-direction: column;
-  width: 30rem;
-  margin: auto;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+  &__box {
+    color: $secondary-text;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    margin: auto;
+  }
+  &__image {
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    margin: auto;
+    border: $primary-background 1px dashed;
+  }
   &__city {
     color: $secondary-text;
     background-color: rgba($primary-background, $alpha: 0.5);
